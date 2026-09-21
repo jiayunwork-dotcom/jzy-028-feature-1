@@ -19,3 +19,20 @@ export interface RegisterProfileRequestDto {
   referenceCellsPerSide?: unknown;
   pfa?: unknown;
 }
+
+/**
+ * POST /sessions 请求体：声明本次会话的窗几何。
+ * 与 /detect 同一套二选一：{ profileName } 或
+ * { guardCells, referenceCellsPerSide, pfa }。
+ */
+export interface CreateSessionRequestDto {
+  profileName?: unknown;
+  guardCells?: unknown;
+  referenceCellsPerSide?: unknown;
+  pfa?: unknown;
+}
+
+/** POST /sessions/:id/append 请求体。 */
+export interface AppendRequestDto {
+  amplitudes?: unknown;
+}

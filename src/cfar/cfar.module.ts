@@ -3,9 +3,11 @@ import { CfarController } from './cfar.controller';
 import { CfarExceptionFilter } from './cfar.exception-filter';
 import { CfarService } from './cfar.service';
 import { ProfileService } from './profile.service';
+import { SessionController } from './session.controller';
+import { CfarSessionService } from './session.service';
 
 @Module({
-  controllers: [CfarController],
-  providers: [CfarService, ProfileService, CfarExceptionFilter],
+  controllers: [CfarController, SessionController],
+  providers: [CfarService, ProfileService, CfarSessionService, CfarExceptionFilter],
 })
 export class CfarModule {}
